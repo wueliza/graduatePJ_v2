@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Chemopm2">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:background="#0ADDC9"
+            android:gravity="center"
+            android:text="藥品簽收"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/dp_24"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            >
+            <TextView
+                android:id="@+id/cphint1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=" "
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dp_24"
+                android:background="@color/cardview_shadow_start_color"/>
+            <TextView
+                android:id="@+id/cphint2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dp_24"
+                android:background="@color/cardview_shadow_start_color"/>
+
+            <TextView
+                android:id="@+id/cphint3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dp_24"
+                android:background="@color/cardview_shadow_start_color"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:orientation="horizontal"
+                android:gravity="bottom"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="bottom"
+                    android:layout_weight = "1"
+                    >
+
+                    <Button
+                        android:id="@+id/cpfrontbt"
+                        android:text="返回"
+                        android:layout_width="140dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="bottom"
+                        android:textStyle="bold"
+                        android:textColor="#FBFBFB"
+                        android:textSize="@dimen/dp_18"
+                        android:background="@drawable/returnbutton"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="right"
+                    android:layout_weight = "1">
+
+                    <Button
+                        android:id="@+id/cpnextBt"
+                        android:text="下一步"
+                        android:layout_width="140dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="bottom"
+                        android:textStyle="bold"
+                        android:textColor="#FBFBFB"
+                        android:textSize="@dimen/dp_18"
+                        android:background="@drawable/nextbutton_general"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</merge>
+
+

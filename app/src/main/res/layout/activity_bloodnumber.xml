@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FCFCFC"
+    tools:context=".BloodnumberActivity">
+    <TextView
+        android:id="@+id/title"
+        android:text="血袋簽收-數量&amp;血品"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#0ADDC9"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/dp_24"/>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="165dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="12dp"
+            android:text="應到血袋數量:"
+            android:textColor="#504C4C"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            >
+            <RadioButton
+                android:id="@+id/yes"
+                android:layout_width="65dp"
+                android:layout_height="60dp"
+                android:text="是"
+                android:textSize="18sp"
+                />
+            <RadioButton
+                android:id="@+id/no"
+                android:layout_width="65dp"
+                android:layout_height="60dp"
+                android:text="否"
+                android:checked="true"
+                android:textSize="18sp"
+                />
+        </RadioGroup>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="00dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="99dp"
+            android:layout_height="60dp"
+            android:text="血品:"
+            android:layout_marginLeft="25dp"
+            android:textStyle="bold"
+            android:textColor="#504C4C"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/bloodtype"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="1dp"
+            android:text="減白之紅血球濃厚液"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:layout_weight = "1"
+            >
+
+            <Button
+                android:id="@+id/frontbt"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:text="上一步"
+                android:textSize="16dp"
+                android:background="#6646628A"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_weight = "1">
+
+            <Button
+                android:id="@+id/nextbt"
+                android:text="下一步"
+                android:layout_width="130dp"
+                android:layout_height="55dp"
+                android:layout_gravity="bottom"
+                android:textSize="18dp"
+                android:background="@drawable/nextbutton_general"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

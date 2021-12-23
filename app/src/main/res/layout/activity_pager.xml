@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FCFCFC"
+    tools:context=".PagerActivity">
+
+    <TextView
+        android:id="@+id/PatientNumber"
+        android:text="輸血TPR"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#0ADDC9"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/dp_24"/>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:background="#0D18FFFF"
+        android:layout_height="70dp"
+        >
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tpr1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="第一次TPR"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="第二次TPR"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="第三次TPR"/>
+    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.viewpager.widget.ViewPager>
+</LinearLayout>

@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCFCFC"
+    tools:context=".Chemogiveinfo2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="@dimen/dp_1"
+        tools:layout_editor_absoluteY="@dimen/dp_1">
+
+        <TextView
+            android:id="@+id/title"
+            android:text="藥品核對"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_80"
+            android:background="#0ADDC9"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/dp_24"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_35"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:text="手圈病歷號："
+                    android:textColor="#504C4C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pa_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/check_background"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_35"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="姓名 :"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:textColor="#504C4C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pa_name"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@drawable/check_background"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="性別 :"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:textColor="#504C4C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pa_gender"
+                    android:layout_width="@dimen/dp_70"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/check_background"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_35"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="床號 :"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:textColor="#504C4C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pa_bed"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@drawable/check_background"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="BSA :"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:textColor="#504C4C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pa_bsa"
+                    android:layout_width="@dimen/dp_70"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@drawable/check_background"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_35"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="身高 :"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:textColor="#504C4C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pa_height"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@drawable/check_background"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="體重 :"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:textColor="#504C4C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pa_weight"
+                    android:layout_width="@dimen/dp_70"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@drawable/check_background"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_35"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="年齡 :"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:textColor="#504C4C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pa_age"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@drawable/check_background"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_2"
+            android:background="#5769F0AE" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_10"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_35"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:layout_marginTop="@dimen/dp_4"
+                            android:layout_marginRight="@dimen/dp_60"
+                            android:text="核藥人員 :"
+                            android:textColor="#504C4C"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/sTv"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/dp_4"
+                            android:layout_marginRight="@dimen/dp_20"
+                            android:layout_weight="1"
+                            android:background="@drawable/check_background"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_35"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:layout_marginTop="@dimen/dp_4"
+                            android:layout_marginRight="@dimen/dp_60"
+                            android:text="確認人員 :"
+                            android:textColor="#504C4C"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/checkTV"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/dp_4"
+                            android:layout_marginRight="@dimen/dp_20"
+                            android:layout_weight="1"
+                            android:background="@drawable/check_background"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_35"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:layout_marginTop="@dimen/dp_4"
+                            android:layout_marginRight="@dimen/dp_60"
+                            android:text="成品單號 :"
+                            android:textColor="#504C4C"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/chemoTv"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/dp_4"
+                            android:layout_marginRight="@dimen/dp_20"
+                            android:layout_weight="1"
+                            android:background="@drawable/check_background"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:layout_marginRight="@dimen/dp_60"
+                    android:text="藥品明細 :"
+                    android:textColor="#504C4C"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_marginRight="@dimen/dp_60"
+                    android:text="名稱"
+                    android:textColor="#504C4C"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/meddose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_marginRight="@dimen/dp_60"
+                    android:text="劑量"
+                    android:textColor="#504C4C"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medfre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_marginRight="@dimen/dp_60"
+                    android:text="流速"
+                    android:textColor="#504C4C"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="bottom"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="bottom"
+                        android:layout_weight = "1"
+                        >
+
+                        <Button
+                            android:id="@+id/BackButtoni"
+                            android:layout_width="@dimen/dp_110"
+                            android:layout_height="@dimen/dp_50"
+                            android:text="上一步"
+                            android:textSize="@dimen/dp_16"
+                            android:background="#6646628A"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="right"
+                        android:layout_weight = "1">
+                        <Button
+                            android:id="@+id/sendbt"
+                            android:layout_width="@dimen/dp_130"
+                            android:layout_height="@dimen/dp_55"
+                            android:layout_gravity="bottom"
+                            android:textSize="@dimen/dp_18"
+                            android:background="@drawable/nextbutton_general"
+                            android:text="傳送"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+</LinearLayout>

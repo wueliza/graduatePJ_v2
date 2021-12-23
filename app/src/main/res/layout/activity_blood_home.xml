@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rotationX="-360"
+    tools:context=".blood_homeActivity"
+    android:background="#FCFCFC"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="輸血作業"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#0ADDC9"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/dp_24"/>
+
+    <Button
+        android:id="@+id/bt"
+        android:text="血袋簽收"
+        android:layout_width="170dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/collectpagebutton"
+        android:layout_gravity="center"
+        android:textSize="23sp"/>
+
+    <Button
+        android:id="@+id/bt2"
+        android:text="核血作業"
+        android:layout_width="170dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/collectpagebutton"
+        android:layout_gravity="center"
+        android:textSize="23sp"/>
+
+    <Button
+        android:id="@+id/bt3"
+        android:text="輸血作業"
+        android:layout_width="170dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/collectpagebutton"
+        android:layout_gravity="center"
+        android:textSize="23sp"/>
+
+<!--    <Button-->
+<!--        android:id="@+id/bt4"-->
+<!--        android:text="輸血TPR"-->
+<!--        android:layout_width="170dp"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:layout_marginTop="35dp"-->
+<!--        android:background="@drawable/collectpagebutton"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:textSize="23sp"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/home"
+            android:text="回主選單"
+            android:layout_width="130dp"
+            android:layout_height="55dp"
+            android:background="@drawable/functionbutton_2"
+            android:layout_gravity="bottom"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+</LinearLayout>

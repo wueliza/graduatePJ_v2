@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rotationX="-360"
+    tools:context=".OperationHome"
+    android:background="#FCFCFC"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="手術"
+        android:id="@+id/Title"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#0ADDC9"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/dp_24"/>
+
+    <Button
+        android:id="@+id/CheckInButton"
+        android:text="Check in 病人辨識"
+        android:layout_width="@dimen/dp_250"
+        android:layout_height="80dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/collectpagebutton"
+        android:layout_gravity="center"
+        android:textSize="@dimen/dp_20"/>
+
+    <Button
+        android:id="@+id/OperationButton"
+        android:layout_width="@dimen/dp_250"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/collectpagebutton"
+        android:text="進刀房病人辨識"
+        android:textSize="@dimen/dp_20" />
+
+    <Button
+        android:id="@+id/WaitingButton"
+        android:layout_width="@dimen/dp_250"
+        android:layout_height="78dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/collectpagebutton"
+        android:text="等候室病人辨識"
+        android:textSize="@dimen/dp_20" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/BackButton"
+            android:text="上一步"
+            android:layout_width="130dp"
+            android:layout_height="55dp"
+            android:background="@drawable/functionbutton_2"
+            android:layout_gravity="bottom"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+</LinearLayout>
