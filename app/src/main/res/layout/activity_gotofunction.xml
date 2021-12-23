@@ -48,7 +48,7 @@
                     android:layout_height="@dimen/dp_52"
                     android:layout_marginTop="@dimen/dp_30"
                     android:background="@drawable/functionbutton_1"
-                    android:text="手術作業"
+                    android:text="123"
                     android:textColor="@color/white"
                     android:textSize="22dp"
                     android:textStyle="bold"
