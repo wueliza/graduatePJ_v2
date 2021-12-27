@@ -11,12 +11,11 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <SurfaceView
-            android:id="@+id/surfaceView"
+        <me.dm7.barcodescanner.zxing.ZXingScannerView
+            android:id="@+id/ZXingScannerView_QRCode"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center" />
+            android:layout_height="450dp"
+            />
     </FrameLayout>
 
     <LinearLayout
