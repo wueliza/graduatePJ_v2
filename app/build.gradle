@@ -49,7 +49,12 @@ dependencies {
 
     compile 'me.dm7.barcodescanner:core:1.9'
     compile 'me.dm7.barcodescanner:zxing:1.9'
-    implementation 'me.dm7.barcodescanner:zxing:1.9.13'
+    //implementation 'me.dm7.barcodescanner:zxing:1.9.13'
     implementation 'com.google.zxing:core'
+<<<<<<< HEAD
     implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
+=======
+    implementation 'com.journeyapps:zxing-android-embedded:4.2.0'
+
+>>>>>>> f05a700e8202aa3c72e3bc748e486495cf4553b7
 }
