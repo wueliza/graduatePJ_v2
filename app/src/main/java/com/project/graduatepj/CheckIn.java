@@ -3,6 +3,7 @@ package com.project.graduatepj;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,6 +13,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,17 +23,19 @@ import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+import com.google.zxing.Result;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
+import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class CheckIn extends AppCompatActivity {
+public class CheckIn extends AppCompatActivity implements ZXingScannerView.ResultHandler {
     Button bt;
     Button bt2;
     SurfaceView surfaceView;
@@ -43,73 +47,85 @@ public class CheckIn extends AppCompatActivity {
     private RESTfulApi resTfulApi;
     ArrayList<String> ORA4 = new ArrayList<>();
     int count = 0;
-
+    ZXingScannerView zXingScannerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_in);
+        zXingScannerView = findViewById(R.id.ZXingScannerView_QRCode);
+
+        //取得相機權限
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
+                ActivityCompat.checkSelfPermission(this
+                        , Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA},
+                    100);
+        }else{
+            openQRCamera();
+
+        }
         show = findViewById(R.id.show);
         textView = (TextView) findViewById(R.id.input);
-        getPermissionsCamera();
+//        getPermissionsCamera();
 
         surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
 
         textView = (TextView) findViewById(R.id.input);
 
-        barcodeDetector = new BarcodeDetector.Builder(this)
-                .setBarcodeFormats(Barcode.ALL_FORMATS)
-                .build();
-
-        cameraSource = new CameraSource.Builder(this, barcodeDetector)
-                .setRequestedPreviewSize(1920, 1080)
-                .setAutoFocusEnabled(true)
-                .build();
-
-        surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
-            @Override
-            public void surfaceCreated(@NonNull SurfaceHolder holder) {
-                if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA)
-                        != PackageManager.PERMISSION_GRANTED)
-                    return;
-                try {
-                    cameraSource.start(holder);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
-
-            @Override
-            public void surfaceChanged(@NonNull SurfaceHolder holder, int format, int width, int height) {
-
-            }
-
-            @Override
-            public void surfaceDestroyed(@NonNull SurfaceHolder holder) {
-                cameraSource.stop();
-            }
-        });
-        barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
-
-            @Override
-            public void release() {
-
-            }
-
-            @Override
-            public void receiveDetections(Detector.Detections<Barcode> detections) {
-                final SparseArray<Barcode> qrCodes = detections.getDetectedItems();
-                if (qrCodes.size() != 0) {
-                    textView.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            textView.setText(qrCodes.valueAt(0).displayValue);
-
-                        }
-                    });
-                }
-            }
-        });
+//        barcodeDetector = new BarcodeDetector.Builder(this)
+//                .setBarcodeFormats(Barcode.ALL_FORMATS)
+//                .build();
+//
+//        cameraSource = new CameraSource.Builder(this, barcodeDetector)
+//                .setRequestedPreviewSize(1920, 1080)
+//                .setAutoFocusEnabled(true)
+//                .build();
+//
+//        surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
+//            @Override
+//            public void surfaceCreated(@NonNull SurfaceHolder holder) {
+//                if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA)
+//                        != PackageManager.PERMISSION_GRANTED)
+//                    return;
+//                try {
+//                    cameraSource.start(holder);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//
+//            @Override
+//            public void surfaceChanged(@NonNull SurfaceHolder holder, int format, int width, int height) {
+//
+//            }
+//
+//            @Override
+//            public void surfaceDestroyed(@NonNull SurfaceHolder holder) {
+//                cameraSource.stop();
+//            }
+//        });
+//        barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
+//
+//            @Override
+//            public void release() {
+//
+//            }
+//
+//            @Override
+//            public void receiveDetections(Detector.Detections<Barcode> detections) {
+//                final SparseArray<Barcode> qrCodes = detections.getDetectedItems();
+//                if (qrCodes.size() != 0) {
+//                    textView.post(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            textView.setText(qrCodes.valueAt(0).displayValue);
+//
+//                        }
+//                    });
+//                }
+//            }
+//        });
         //api連接
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://140.136.151.75:8080/api/")
@@ -210,16 +226,46 @@ public class CheckIn extends AppCompatActivity {
                 }
             }
         });
-////相機
+
 
     }
 
-    private void getPermissionsCamera() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 1);
+    private void openQRCamera() {
+        zXingScannerView.setResultHandler(this);
+        zXingScannerView.startCamera();
+    }
+    /**取得權限回傳*/
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 100 && grantResults[0] ==0){
+            openQRCamera();
+        }else{
+            Toast.makeText(this, "權限勒？", Toast.LENGTH_SHORT).show();
         }
     }
+
+    /**關閉QRCode相機*/
+    @Override
+    protected void onStop() {
+        zXingScannerView.stopCamera();
+        super.onStop();
+    }
+    @Override
+    public void handleResult(Result rawResult) {
+        TextView tvResult = findViewById(R.id.show);
+        tvResult.setText(rawResult.getText());
+        //ZXing相機預設掃描到物件後就會停止，以此這邊再次呼叫開啟，使相機可以為連續掃描之狀態
+        openQRCamera();
+    }
+
+//    private void getPermissionsCamera() {
+//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+//                != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 1);
+//        }
+//    }
 ///相機結束
 
 
@@ -317,4 +363,6 @@ public class CheckIn extends AppCompatActivity {
         }
 
     }
+
+
 }
