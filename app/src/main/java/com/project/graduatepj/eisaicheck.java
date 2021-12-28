@@ -56,6 +56,8 @@ public class eisaicheck extends AppCompatActivity implements ZXingScannerView.Re
         setContentView(R.layout.activity_eisaicheck);
 //        getPermissionsCamera();             //取得相機權限
         zXingScannerView = findViewById(R.id.ZXingScannerView_QRCode);
+
+
         //取得相機權限
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
                 ActivityCompat.checkSelfPermission(this
@@ -338,7 +340,7 @@ public class eisaicheck extends AppCompatActivity implements ZXingScannerView.Re
     }
     @Override
     public void handleResult(Result rawResult) {
-        TextView tvResult = findViewById(R.id.input);
+        TextView tvResult = findViewById(R.id.ehint2);
         tvResult.setText(rawResult.getText());
         //ZXing相機預設掃描到物件後就會停止，以此這邊再次呼叫開啟，使相機可以為連續掃描之狀態
         openQRCamera();

@@ -282,7 +282,7 @@ public class Chemopm2 extends AppCompatActivity implements ZXingScannerView.Resu
     }
     @Override
     public void handleResult(Result rawResult) {
-        TextView tvResult = findViewById(R.id.input);
+        TextView tvResult = findViewById(R.id.cphint2);
         tvResult.setText(rawResult.getText());
         //ZXing相機預設掃描到物件後就會停止，以此這邊再次呼叫開啟，使相機可以為連續掃描之狀態
         openQRCamera();
