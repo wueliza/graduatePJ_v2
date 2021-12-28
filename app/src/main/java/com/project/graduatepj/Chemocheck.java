@@ -8,6 +8,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -20,33 +21,46 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+import com.google.zxing.Result;
 
 import java.io.IOException;
 
+import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Chemocheck extends AppCompatActivity {
+public class Chemocheck extends AppCompatActivity implements ZXingScannerView.ResultHandler{
     private Button nextbt , upbt;
     private TextView hint1 , hint2 , hint3;
     Bundle bundle = new Bundle();
     Intent intent = new Intent();
     private RESTfulApi resTfulApi;
     int count = 0;
-
+    ZXingScannerView zXingScannerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chemocheck);
+        zXingScannerView = findViewById(R.id.ZXingScannerView_QRCode);
+//取得相機權限
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
+                ActivityCompat.checkSelfPermission(this
+                        , Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA},
+                    100);
+        }else{
+            openQRCamera();
 
+        }
         nextbt = (Button)findViewById(R.id.nextbt);
         upbt = (Button)findViewById(R.id.frontbt) ;
         hint1 = findViewById(R.id.chint1);
@@ -109,7 +123,7 @@ public class Chemocheck extends AppCompatActivity {
         CameraSource cameraSource;
         BarcodeDetector barcodeDetector;
 
-        getPermissionsCamera();
+//        getPermissionsCamera();
 
 //        surfaceView=(SurfaceView)findViewById(R.id.surfaceView);
 //        barcodeDetector = new BarcodeDetector.Builder(this)
@@ -256,5 +270,35 @@ public class Chemocheck extends AppCompatActivity {
                 hint1.setText("請重新掃描成品單號！");
             }
         });
+    }
+
+    private void openQRCamera() {
+        zXingScannerView.setResultHandler(this);
+        zXingScannerView.startCamera();
+    }
+    /**取得權限回傳*/
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 100 && grantResults[0] ==0){
+            openQRCamera();
+        }else{
+            Toast.makeText(this, "權限勒？", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**關閉QRCode相機*/
+    @Override
+    protected void onStop() {
+        zXingScannerView.stopCamera();
+        super.onStop();
+    }
+    @Override
+    public void handleResult(Result rawResult) {
+        TextView tvResult = findViewById(R.id.input);
+        tvResult.setText(rawResult.getText());
+        //ZXing相機預設掃描到物件後就會停止，以此這邊再次呼叫開啟，使相機可以為連續掃描之狀態
+        openQRCamera();
     }
 }
