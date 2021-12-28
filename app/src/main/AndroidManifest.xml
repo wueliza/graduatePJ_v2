@@ -18,7 +18,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="graduatePJ"
+        android:label="醫療作業確認APP_V2"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:targetSandboxVersion="2"
