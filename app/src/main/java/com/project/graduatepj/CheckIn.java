@@ -68,7 +68,7 @@ public class CheckIn extends AppCompatActivity implements ZXingScannerView.Resul
         textView = (TextView) findViewById(R.id.input);
 //        getPermissionsCamera();
 
-        surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
+//        surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
 
         textView = (TextView) findViewById(R.id.input);
 

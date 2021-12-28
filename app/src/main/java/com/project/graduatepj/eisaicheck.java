@@ -53,7 +53,7 @@ public class eisaicheck extends AppCompatActivity {
 
         DisplayMetrics metric = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metric);
-        surfaceView=(SurfaceView)findViewById(R.id.surfaceView);
+//        surfaceView=(SurfaceView)findViewById(R.id.surfaceView);
         step=(TextView)findViewById(R.id.ehint1); //
         result = (TextView)findViewById(R.id.ehint2);
         show = (TextView)findViewById(R.id.ehint3);
