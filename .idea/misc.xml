@@ -3,8 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_blood_collect1.xml" value="0.2328125" />
         <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_check_in.xml" value="0.2484375" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_chemocheck.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_chemocheck2.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_eisaicheck.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_eisairesult.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_examine_home_page.xml" value="0.22395833333333334" />
         <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_gotofunction.xml" value="0.20108695652173914" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_operation_home.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_operation_verify.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_print_examine_number1.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_print_examine_number2.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_sign.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_sign_sum.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_test.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_tpractivity.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_transfer.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_transfer_sum.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_waiting.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/activity_waiting2.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/fragment_tpr1.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/fragment_tpr2.xml" value="0.22395833333333334" />
+        <entry key="..\:/AimCameraTest/app/src/main/res/layout/fragment_tpr3.xml" value="0.22395833333333334" />
       </map>
     </option>
   </component>
