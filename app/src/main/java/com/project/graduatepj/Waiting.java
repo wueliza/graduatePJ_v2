@@ -66,7 +66,7 @@ public class Waiting extends AppCompatActivity implements ZXingScannerView.Resul
 
         }
 
-        surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
+//        surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
         textView = (TextView) findViewById(R.id.input);
 //        barcodeDetector = new BarcodeDetector.Builder(this)
 //                .setBarcodeFormats(Barcode.ALL_FORMATS)
